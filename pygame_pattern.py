@@ -8,7 +8,7 @@
 # Библиотеки: ----------------------------------------------------------------------------------------------------------
 if True:
     import sys
-    import pygame  # ------------- pip install pygame
+    import pygame  # pip install pygame
     from pygame.locals import *
 
     pygame.init()
@@ -19,7 +19,6 @@ if True:
     # Окно:
     if True:
         FPS = 60
-        vSync = True
         title = "Window"
         title_icon = None  # pygame.image.load("dir/icon.png")  # .convert() | .convert_alpha()
         w_size, h_size = 960, 540
@@ -32,8 +31,6 @@ if True:
 # Окно: ----------------------------------------------------------------------------------------------------------------
 if True:
     screen = pygame.display.set_mode((w_size, h_size), RESIZABLE, vsync=0)
-    if vSync:
-        pygame.display.set_mode((screen.get_width(), screen.get_height()), RESIZABLE, vsync=1)
     # pygame.display.set_icon(title_icon)
     pygame.display.set_caption(title)
     clock = pygame.time.Clock()
