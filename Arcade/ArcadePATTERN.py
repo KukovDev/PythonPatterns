@@ -1,4 +1,3 @@
-
 # ----------------------------------------------------------------------------------------------------------------------
 # Сборка под пк: pyinstaller -F --onefile -n NameOutputFile main.py
 #
@@ -44,7 +43,8 @@ class MyGame(arcade.Window):
             center_window=True,  # Центровка окна относительно экрана вашего пк.
             antialiasing=True,   # Сглаживание.
             samples=4,           # Уровень сглаживания. По умолчанию 4. Все возможные: 2, 4, 8, 16.
-            gl_version=(3, 3))   # Версия OpenGL.
+            gl_version=(3, 3)    # Версия OpenGL.
+        )
 
         arcade.set_background_color((0, 0, 0))  # Установить цвет фона.
 
