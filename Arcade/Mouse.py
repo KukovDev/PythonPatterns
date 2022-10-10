@@ -7,7 +7,8 @@ class Mouse:
         self.keypress = 0                                    # Нажатая кнопка.
         self.keyrelease = 0                                  # Отпущенная кнопка.
         self.pos = 0, 0                                      # Позиция мыши.
-        self.scroll = 0, 0                                   # Скролл мыши.
+        self.mscroll = 0, 0                                  # Скролл мыши.
+        self.ismscroll = False                               # Крутится ли колёсико мыши.
 
     # Вызывайте эту функцию всегда в функции on_key_press():
     def press(self, x: int, y: int, button: int):
@@ -32,7 +33,8 @@ class Mouse:
     # Вызывайте эту функцию всегда в функции on_mouse_scroll():
     def scroll(self, x: int, y: int, scrollx: int, scrolly: int):
         self.pos = x, y
-        self.scroll = scrollx, scrolly
+        self.mscroll = scrollx, scrolly
+        self.ismscroll = True
 
     # Вернуть истину если кнопка зажата. Иначе ложь:
     def ispressed(self, button: int):
@@ -52,6 +54,13 @@ class Mouse:
         if button == self.keyrelease:
             return True
         return False
+    
+    # Вернуть истину если колёсико мыши крутится. Иначе ложь:
+    def isscroll(self):
+        if self.ismscroll:
+            self.ismscroll = False
+            return True
+        return False
 
     # Нажатая кнопка:
     def keypress(self):
@@ -67,4 +76,4 @@ class Mouse:
 
     # Получить скроллинг мыши:
     def getscroll(self):
-        return self.scroll
+        return self.mscroll
