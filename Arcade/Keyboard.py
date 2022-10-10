@@ -36,8 +36,8 @@ class Keyboard:
             {124: False}, {125: False}, {126: False}
         ]
 
-        self.keypress = int
-        self.keyrelease = int
+        self.keypress = int    # Нажатая клавиша.
+        self.keyrelease = int  # Отпущенная клавиша.
 
     # Вызывайте эту функцию всегда в функции on_key_press():
     def press(self, key: int):
