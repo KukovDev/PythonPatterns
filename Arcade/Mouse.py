@@ -46,12 +46,14 @@ class Mouse:
     # Вернуть истину если клавиша нажата. Иначе ложь:
     def ispress(self, button: int):
         if button == self.keypress:
+            self.keypress = 0
             return True
         return False
 
     # Вернуть истину если кнопка отпущена. Иначе ложь:
     def isrelease(self, button: int):
         if button == self.keyrelease:
+            self.keyrelease = 0
             return True
         return False
     
